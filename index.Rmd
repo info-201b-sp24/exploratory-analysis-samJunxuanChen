@@ -3,6 +3,15 @@ title: "Exploratory Analysis"
 output: html_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(tidyverse)
+library(dplyr)
+library(readxl)
+library(ggplot2)
+```
+
 ## Project title
 
 Global Population Dynamics: The Role of Birth, Death, and Life Expectancy
@@ -80,14 +89,28 @@ Describe why you chose this chart and what information it reveals
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+``````{r , echo = FALSE, code = readLines("chart1_example.R")}
 ```
 
-### Chart 2
+### Chart 2: Top 5 and Bottom 5 Countries by Average Life Expectancy (2018-2021)
 
 Include a chart
 
 Describe why you chose this chart and what information it reveals
+```{r chart2,  echo = FALSE}
+source("scripts/Sam_Avg_LE.R")
+plot(chart2)
+```
+This chart shows the average life expectancy of different countries across the globe in 2018-2021, that is, how many years the population of that country will live on average. It shows the 5 countries with the highest life expectancy and the 5 countries with the lowest life expectancy.
+
+### Purpose
+The purpose of this chart is to examine the variation in average life expectancy across different countries from 2018 to 2021. By identifying the top five countries with the highest life expectancy and the bottom five countries with the lowest life expectancy, we aim to gain insights into global demographic trends. 
+
+## Insights
+- The five countries with the lowest average life expectancy are all located on the African continent, and none of them has a life expectancy above 60.
+ -These lowest ranked countries are expected to be deficient in economic stability, quality of life, local government strategic decisions, resource allocation, and social planning.
+- The five countries with the highest average life expectancy are all outside the African continent, with three countries from Europe and two from Asia.
+  - They are all developed countries with good education, health and social systems. However, they have the best resources, which means that the distribution of resources and social planning have a significant impact on the expected age.
 
 ### Chart 3
 
