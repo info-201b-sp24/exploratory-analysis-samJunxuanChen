@@ -5,50 +5,62 @@ output: html_document
 
 ## Project title
 
-Give your project a concise, interesting title that summarizes the entirety of your project
+Global Population Dynamics: The Role of Birth, Death, and Life Expectancy
 
 ### Authors
 
-Names of your team members
+Aaron Chen (chen716@uw.edu)
+Sam Junxuan Chen (junxuan@uw.edu)
+David Sung Ha Hyun (davyhyun@uw.edu)
 
 ### Date
 
-Winter 2022
+Spring 2024
+05/14/2024
 
 ### Abstract
 
-No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
+"Our main question is understand the relationship between demographic factors such as life expectancy, birth rate, and death rate with population size. This question is important because it can provide insights into the impact of population dynamics on human well-being and societal trends. To address the question, we will analyze the correlations between these variables like life expectancy and fertility rate and their relationships."
 
 ### Keywords
 
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+Social Science, Global Population, Population dynamics
 
 ### Introduction  
 
-Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
+Our project aims to unravel the complexity of population dynamics by investigating the relationship between different demographic factors, such as life expectancy, birth rate, and death rate, and overall population size. These factors are critical to understanding the broader consequences of demographic shifts for society structures and individual well-being. Our project raises several research questions, including:
+- How does life expectancy correlate with changes in population size across different regions?
+- What impact do variations in birth and death rates have on the population size of different countries?
+- Which factors, life expectancy, birth rate, death rate, or fertility rate contribute most to population?
+
+
+The motivations behind these research questions are rooted in understanding how demographic shifts can influence a wide range of societal and economic outcomes. Through these questions we can assess how increases in life expectancy influence regional population structures and the associated economic and social planning needs; we can analyze how changes in birth and death rates drive population growth or decline, informing resource allocation, infrastructure development, and economic strategies; and we can identify the most impactful demographic factors on population dynamics to determine the effectiveness of different societal factors such as healthcare, education, and economic planning.
+
+
+These questions are important because they address fundamental issues about human growth and social stability. Understanding these dynamics enables politicians, researchers, and public health authorities to better predict future trends and develop solutions to promote health, economic stability, and quality of life. 
 
 ### Related Work  
 
-Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
+Our research examines the complex relationships between demographic characteristics such as life expectancy, birth rate, and death rate, as well as their effects on population size. This issue matters because it addresses fundamental aspects of economic, social, and health-related processes across many geographical and socioeconomic contexts. Understanding these relationships contributes in addressing concerns such as aging populations, workforce dynamics, healthcare delivery, and social security systems.
+
+[Walker, B. H., & Brown, D. C."Trends in lifespan variation across the spectrum of rural and urban places in the United States, 1990–2017."](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9434220/):  This study highlights the growing disparities in mortality rates and life expectancy between urban and rural areas in the U.S., emphasizing the importance of geographical differences in demographic research. 
+
+[Roser, M. (2019). "Demographic transition: Why is rapid population growth a temporary phenomenon?"](https://ourworldindata.org/demographic-transition#:~:text=Death%20rates%20fall%20first%2C%20then,a%20slowdown%20of%20population%20growth.&text=Population%20growth%20is%20determined%20by,have%20fallen%20across%20the%20world.): Max Roser explains the concept of demographic transition through historical and contemporary examples, explaining how and why populations grow and eventually stabilize. This work is crucial for understanding the temporal dynamics of population changes and the roles that mortality and fertility rates play. 
+
+[“Main Factors Driving Population Growth”](https://www.pewresearch.org/religion/2015/04/02/main-factors-driving-population-growth/): This source delves into the primary drivers of population growth, such as fertility rates, mortality rates, age profiles, migration, and religious switching. It provides a comprehensive overview of how these factors individually and collectively influence population trends and offers projections that consider different scenarios, thereby contributing to a nuanced understanding of demographic changes.
+
+These sources serve as a foundation for comprehending the complexities of demographic change and their worldwide repercussions. They also emphasize the importance of studying population dynamics in order to better predict future demographic transitions and develop suitable policy responses.
 
 ### The Dataset
 
-Where did you find the data? Please include a link to the data source  
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+The data was found on Kaggle. Here is the link to the data source: [Global Population Trends(2016-2022)](https://www.kaggle.com/datasets/alitaqi000/global-population-trends2016-2022). The data was collected by Syed Ali Taqi. The data compiled data from Macrotrends, [Macrotrends Offical Website](https://www.macrotrends.net/). Macrontends is a company that provides a standard stock screener and their data collection methodology is to take information from government records and integrate that data with economic data, financial market data, company expert judgment and data. The data using in the project are cited by Syed Ali Taqi from Macrontends' data integration of Population. There are 1074 observations (rows) in the dataset.There are 12 features (columns) in the dataset. In conducting the analysis, conclusions drawn from the data may have ethical implications, especially if the conclusions contribute to the perpetuation of stereotypes or stigmatization of certain groups of the population. It is important to consider the impact that the data may have on different communities and whether the use of the data is consistent with principles of social justice and equity. A limiting factor may be the accuracy and reliability of the data, as demographic data collection methods may differ across countries and regions, leading to inconsistencies and potential bias. In addition, missing or incomplete data may affect the comprehensiveness of the analysis. In addition, demographic indicators may not fully capture the complexity of population dynamics and certain population groups like minors may be underrepresented in the data.
 
 ### Implications
 
-Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
+If the research in our project succeeds in answering the questions posed, we believe that technicians, designers, and policymakers will be greatly affected. First, for technicians, understanding the impact of demographic factors on population dynamics can help them build models for prediction in fields such as public health, urban planning, and resource management. For designers, they can use this research to create more adaptable and sustainable living environments to meet changing demographic characteristics, such as the aging of the population that many countries in the world are now facing. Or the problem of rapid urbanization. For policymakers, they will have very comprehensive data to analyze issues such as education, health care and pensions, and can help them solve social phenomena such as overpopulation, underpopulation or an aging workforce. This multidisciplinary approach ensures that social infrastructure develops in step with demographic trends, promoting stability and prosperity.
 
 ### Limitations & Challenges
-What challenges or limitations might you need to address with your project idea more broadly? Briefly discuss. (at least 150 words)
+In our opinion, a significant limitation of our project is the challenge of data heterogeneity and standardization. Demographic data may be collected using different methods in different countries and regions. This can lead to inconsistencies in comparative analyses, for example, the indicators measuring birth and death rates may differ, or the definition of “urban” versus “rural” may differ. Differences in these indicators will affect the accuracy of the analysis. In addition, demographic characteristics change rapidly due to factors such as immigration, policy changes, or major economic shifts. This means that not only can the data we use be inconsistent, but it can also quickly become outdated. Therefore, any conclusions drawn must be considered within the context of limitations and are subject to the possibility of bias and error. The project will require rigorous data validation methods and adaptive approaches to accommodate and reconcile these differences to ensure findings are reliable and reflect true population dynamics. 
 
 ### Summary Information
 
