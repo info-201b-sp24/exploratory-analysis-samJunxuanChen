@@ -75,11 +75,14 @@ In our opinion, a significant limitation of our project is the challenge of data
 
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
 
-### Table
+### Table: Global Demographic Factors (2018-2021)
 
-Include a table of aggregate information
+```{r aggregated table, echo=FALSE, message=FALSE}
+source("scripts/Table-Global Gemographic Factors.R")
+kable(selected_data)
+```
 
-Describe why you included the table and what information it reveals
+Due to the large amount of incomplete data from the original data in 2017, this table will round up the 2017 data and start with 2018. This table includes life expectancy along with broader population dynamics, including birth rates, urban population, and overall population size in preparation for a deeper understanding of how demographic factors affect social outcomes.
 
 ### Chart 1
 
@@ -94,19 +97,16 @@ Here's an example of how to run an R script inside an RMarkdown file:
 
 ### Chart 2: Top 5 and Bottom 5 Countries by Average Life Expectancy (2018-2021)
 
-Include a chart
-
-Describe why you chose this chart and what information it reveals
 ```{r chart2,  echo = FALSE}
-source("scripts/Sam_Avg_LE.R")
+source("scripts/Chart 2-LE Top and Bottom 5.R")
 plot(chart2)
 ```
-This chart shows the average life expectancy of different countries across the globe in 2018-2021, that is, how many years the population of that country will live on average. It shows the 5 countries with the highest life expectancy and the 5 countries with the lowest life expectancy.
+This chart shows the average life expectancy of different countries across the globe in 2018-2021, that is, how many years the population of that country will live on average. The data set lacks the population data in 2017, so this chart will skip year 2017. It shows the 5 countries with the highest life expectancy and the 5 countries with the lowest life expectancy.
 
 ### Purpose
 The purpose of this chart is to examine the variation in average life expectancy across different countries from 2018 to 2021. By identifying the top five countries with the highest life expectancy and the bottom five countries with the lowest life expectancy, we aim to gain insights into global demographic trends. 
 
-## Insights
+### Insights
 - The five countries with the lowest average life expectancy are all located on the African continent, and none of them has a life expectancy above 60.
  -These lowest ranked countries are expected to be deficient in economic stability, quality of life, local government strategic decisions, resource allocation, and social planning.
 - The five countries with the highest average life expectancy are all outside the African continent, with three countries from Europe and two from Asia.

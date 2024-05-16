@@ -27,13 +27,13 @@ top_countries <- top_bottom_countries %>% slice_tail(n = 5)
 bottom_countries <- top_bottom_countries %>% slice_head(n = 5)
 
 # Create a bar chart
-library(ggplot2)
-ggplot() +
+library(ggplot2) 
+chart2 <- ggplot() +
   geom_bar(data = top_countries, aes(x = reorder(Country, avg_Life_Expectancy), y = avg_Life_Expectancy), stat = "identity", fill = "blue") +
   geom_bar(data = bottom_countries, aes(x = reorder(Country, avg_Life_Expectancy), y = avg_Life_Expectancy), stat = "identity", fill = "red") +
   coord_flip() +
-  geom_text(data = top_countries, aes(x = reorder(Country, avg_Life_Expectancy), y = avg_Life_Expectancy, label = avg_Life_Expectancy), vjust = -0.5, size = 3, color = "black") +
-  geom_text(data = bottom_countries, aes(x = reorder(Country, avg_Life_Expectancy), y = avg_Life_Expectancy, label = avg_Life_Expectancy), vjust = 1.5, size = 3, color = "black") +
+  geom_text(data = top_countries, aes(x = reorder(Country, avg_Life_Expectancy), y = avg_Life_Expectancy, label = avg_Life_Expectancy), vjust = 0.5, size = 4, color = "black") +
+  geom_text(data = bottom_countries, aes(x = reorder(Country, avg_Life_Expectancy), y = avg_Life_Expectancy, label = avg_Life_Expectancy), vjust = 0.5, size = 4, color = "black") +
   labs(title = "Top 5 and Bottom 5 Countries by Average Life Expectancy (2018-2021)",
        x = "Country",
        y = "Average Life Expectancy",
