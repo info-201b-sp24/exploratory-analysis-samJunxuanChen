@@ -111,6 +111,29 @@ The purpose of this chart is to examine the variation in average life expectancy
 
 ### Chart 3
 
-Include a chart
+```{r}
+library(ggplot2)
 
-Describe why you chose this chart and what information it reveals
+data <- read.csv("~/Desktop/info/Global Population Trends(2016-2022) 2.csv", stringsAsFactors = FALSE)
+
+data$Total.Population <- as.numeric(gsub(",", "", gsub("-", NA, data$Total.Population)))
+data$Urban.Population <- as.numeric(gsub(",", "", gsub("-", NA, data$Urban.Population)))
+
+print(paste("Missing Total Population:", sum(is.na(data$Total.Population))))
+print(paste("Missing Urban Population:", sum(is.na(data$Urban.Population))))
+
+ggplot(data, aes(x = Total.Population, y = Urban.Population)) +
+  geom_point() +
+  scale_x_log10() +  
+  scale_y_log10() +  
+  labs(title = "Scatter Plot of Total Population vs. Urban Population",
+       x = "Total Population (log scale)",
+       y = "Urban Population (log scale)") +
+  theme_minimal()
+```
+
+### Purpose
+I created a scatterplot of total population versus urban population to visually analyze the relationship between a country's total population and its urban population. By using a logarithmic scale on both axes, I ensured that the data were represented efficiently across a wide range of values, accommodating countries with vastly different population sizes, without distorting visual interpretation. My main goal in creating this graph was to understand how the urban population compares to the total population. This understanding is critical for policymakers, urban planners, and researchers like me who need to assess the relationship between urbanization and overall population growth. The insights I derived from this graph will be invaluable in informing decisions related to infrastructure development, resource allocation, and urban planning services.
+
+### Insights
+The scatterplot shows a strong positive correlation between total population and urban population, indicating that as a country's total population increases, its urban population also increases. This relationship is approximately linear on a logarithmic scale, indicating an exponential growth pattern in real values. This trend highlights that more populous countries are likely to have larger urban populations, perhaps due to better economic opportunities, more developed infrastructure or active urban growth policies. However, I noticed some outliers or deviations from this trend, with some countries not having as large urban populations as expected for the overall population. These biases may stem from a variety of factors, such as geographical constraints, different stages of economic development, or specific national policies affecting urban development. The insights I gain here can help me and others in the field better understand the dynamics of urbanization at different population sizes.

@@ -16,3 +16,5 @@ ggplot(data, aes(x = Total.Population, y = Urban.Population)) +
        x = "Total Population (log scale)",
        y = "Urban Population (log scale)") +
   theme_minimal()
+
+plot 
