@@ -77,7 +77,7 @@ Write a summary paragraph of findings that includes the 5 values calculated from
 
 ### Table: Global Demographic Factors (2018-2021)
 
-```{r aggregated table, echo=FALSE, message=FALSE}
+```{r aggregated table, warning=FALSE, echo=FALSE, message=FALSE}
 source("scripts/Table-Global Gemographic Factors.R")
 kable(grouped_data)
 ```
@@ -109,8 +109,7 @@ The purpose of this chart is to examine the variation in average life expectancy
 - The five countries with the highest average life expectancy are all outside the African continent, with three countries from Europe and two from Asia.
   - They are all developed countries with good education, health and social systems. However, they have the best resources, which means that the distribution of resources and social planning have a significant impact on the expected age.
 
-### Chart 3
+### Chart 3: Total Population vs. Urban Population
 
-Include a chart
-
-Describe why you chose this chart and what information it reveals
+``````{r chart3, echo = FALSE, warning = FALSE, code = readLines("TotalPopulationVSUrbanPopulation.R")}
+```

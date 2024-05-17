@@ -1,10 +1,19 @@
 library(knitr)
 library(dplyr)
+
 # Data
 data <- read.csv("DATA/Global Population Trends(2016-2022).csv")
 
+# Convert character columns to numeric
+data$Total.Population <- as.numeric(gsub(",", "", data$Total.Population))
+data$Urban.Population <- as.numeric(gsub(",", "", data$Urban.Population))
+data$Birth.Rate <- as.numeric(gsub(",", "", data$Birth.Rate))
+data$Life.Expectancy <- as.numeric(gsub(",", "", data$Life.Expectancy))
+
+filtered_data <- data[data$Year %in% c(2018, 2019, 2020, 2021), ]
+
 # Group the data by Country and Year and include the variables
-grouped_data <- data %>%
+grouped_data <- filtered_data %>%
   group_by(Country, Year) %>%
   summarise(Total.Population = sum(Total.Population, na.rm = TRUE),
             Urban.Population = sum(Urban.Population, na.rm = TRUE),
