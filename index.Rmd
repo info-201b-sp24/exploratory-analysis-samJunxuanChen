@@ -73,10 +73,13 @@ In our opinion, a significant limitation of our project is the challenge of data
 
 ### Summary Information
 
-``````{r , echo = FALSE, warning = FALSE, code = readLines("Summary.R")}
+``````{r, message = TRUE, echo=FALSE, warning = FALSE }
+knitr::opts_chunk$set(echo = FALSE)
+source("Summary.R")
 ```
+The data analysis reveals important trends across `r summary_data$num_countries` countries. The highest life expectancy observed is `r summary_data$max_life_expectancy` years, suggesting excellent health standards in certain areas. `r summary_data$highest_birth_rate_country`, with the highest birth rate, highlights regions with significant population growth challenges. An average population density of `r summary_data$average_population_density` people per square kilometer indicates how closely people live together in various parts of the world, affecting everything from resource distribution to urban planning. The total urban population, nearing `r format(summary_data$total_urban_population, big.mark=",")` billion, points to a major shift towards city living, with significant implications for urban infrastructure and services. This urbanization trend is critical as it shapes future planning and development strategies globally.
 
-The data analysis reveals important trends across 216 countries. The highest life expectancy observed is 85 years, suggesting excellent health standards in certain areas. Niger, with the highest birth rate, highlights regions with significant population growth challenges. An average population density of 421 people per square kilometer indicates how closely people live together in various parts of the world, affecting everything from resource distribution to urban planning. The total urban population, nearing 4.42 billion, points to a major shift towards city living, with significant implications for urban infrastructure and services. This urbanization trend is critical as it shapes future planning and development strategies globally.
+
 
 ### Table: Global Demographic Factors (2018-2021)
 
