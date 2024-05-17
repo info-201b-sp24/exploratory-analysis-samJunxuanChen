@@ -118,16 +118,13 @@ The purpose of this chart is to examine the variation in average life expectancy
   - They are all developed countries with good education, health and social systems. However, they have the best resources, which means that the distribution of resources and social planning have a significant impact on the expected age.
 
 ### Chart 3: Total Population vs. Urban Population
-```{r}
+```{r, warning=FALSE, message=FALSE}
 library(ggplot2)
 
-data <- read.csv("~/Desktop/info/Global Population Trends(2016-2022) 2.csv", stringsAsFactors = FALSE)
+data <- read.csv("DATA/Global Population Trends(2016-2022).csv", stringsAsFactors = FALSE)
 
 data$Total.Population <- as.numeric(gsub(",", "", gsub("-", NA, data$Total.Population)))
 data$Urban.Population <- as.numeric(gsub(",", "", gsub("-", NA, data$Urban.Population)))
-
-print(paste("Missing Total Population:", sum(is.na(data$Total.Population))))
-print(paste("Missing Urban Population:", sum(is.na(data$Urban.Population))))
 
 ggplot(data, aes(x = Total.Population, y = Urban.Population)) +
   geom_point() +
