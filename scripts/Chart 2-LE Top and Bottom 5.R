@@ -1,7 +1,11 @@
-# Read the Data file into R
+# Sam Chen
+# INFO 201 
+# Exploratory Analysis
+
+#Data
 data <- read.csv("DATA/Global Population Trends(2016-2022).csv")
 
-# The data set uses - as no data, so replace - with NA
+# The data set uses "-" as no data, so replace "-" with NA
 data[data == "-"] <- NA
 
 # The data set needs to convert columns to numeric
@@ -11,7 +15,7 @@ data[numeric_cols] <- lapply(data[numeric_cols], function(x) as.numeric(gsub(","
 # Remove rows with NA values
 data <- na.omit(data)
 
-# Filter data for the years 2018 to 2021
+# Filter data for the years 2018 to 2021 since 2017 data is incomplte
 data <- data %>%
   filter(Year >= 2018 & Year <= 2021)
 
