@@ -84,16 +84,13 @@ kable(selected_data)
 
 Due to the large amount of incomplete data from the original data in 2017, this table will round up the 2017 data and start with 2018. This table includes life expectancy along with broader population dynamics, including birth rates, urban population, and overall population size in preparation for a deeper understanding of how demographic factors affect social outcomes.
 
-### Chart 1
+### Chart 1: Population Density vs Birth Rate
 
-Include a chart
-
-Describe why you chose this chart and what information it reveals
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r , echo = FALSE, code = readLines("chart1_example.R")}
+``````{r , echo = FALSE, warning = FALSE, code = readLines("DensityVBirthRate.R")}
 ```
+
+The chart "Population Density vs Birth Rate" is explores the relationship between how densely populated a country is and its birth rate. This visualization helps identify patterns that may influence policy decisions in areas like healthcare and urban planning. Observing the plot, we can see that higher population densities do not necessarily correspond to higher birth rates, suggesting influences from other various factors impact population density more significantly, not just the birth rate. The data mostly clusters at lower densities with a broad spread in birth rates, highlighting significant variance across countries.
+
 
 ### Chart 2: Top 5 and Bottom 5 Countries by Average Life Expectancy (2018-2021)
 
