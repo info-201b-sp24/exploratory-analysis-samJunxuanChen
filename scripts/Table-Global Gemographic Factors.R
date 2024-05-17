@@ -1,12 +1,14 @@
 library(knitr)
+library(dplyr)
 # Data
 data <- read.csv("DATA/Global Population Trends(2016-2022).csv")
 
-# Filter the data from 2018 to 2021 because the 2017 population data is missing
-filtered_data <- data[data$Year %in% c(2018, 2019, 2020, 2021), ]
+# Group the data by Country and Year and include the variables
+grouped_data <- data %>%
+  group_by(Country, Year) %>%
+  summarise(Total.Population = sum(Total.Population, na.rm = TRUE),
+            Urban.Population = sum(Urban.Population, na.rm = TRUE),
+            Birth.Rate = mean(Birth.Rate, na.rm = TRUE),
+            Life.Expectancy = mean(Life.Expectancy, na.rm = TRUE))
 
-# Select the variables that used in the chart
-selected_data <- filtered_data[, c("Country", "Year", "Total.Population", "Urban.Population", "Birth.Rate", "Life.Expectancy")]
-
-# Print the table using kable
-kable(selected_data)
+head(grouped_data)
