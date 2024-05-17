@@ -1,7 +1,7 @@
 # Exploratory Analysis
 
-Link to your group's exploratory analysis here: https://info-201b-sp23.github.io/exploratory-analysis-starter/index.html   
-(subsitute for your group's GitHub pages site)
+Link to your group's exploratory analysis here: https://info-201b-sp24.github.io/exploratory-analysis-samJunxuanChen/    
+
 
 The purpose of this assignment is to provide you with the opportunity to explore your final project data and become familiar with collaborative coding techniques. By completing the assignment, you will demonstrate the following skills:
 
