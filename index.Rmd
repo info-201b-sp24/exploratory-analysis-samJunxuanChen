@@ -108,16 +108,39 @@ plot(chart2)
 ```
 This chart shows the average life expectancy of different countries across the globe in 2018-2021, that is, how many years the population of that country will live on average. The data set lacks the population data in 2017, so this chart will skip year 2017. It shows the 5 countries with the highest life expectancy and the 5 countries with the lowest life expectancy.
 
-### Purpose
+#### Purpose
 The purpose of this chart is to examine the variation in average life expectancy across different countries from 2018 to 2021. By identifying the top five countries with the highest life expectancy and the bottom five countries with the lowest life expectancy, we aim to gain insights into global demographic trends. 
 
-### Insights
+#### Insights
 - The five countries with the lowest average life expectancy are all located on the African continent, and none of them has a life expectancy above 60.
  -These lowest ranked countries are expected to be deficient in economic stability, quality of life, local government strategic decisions, resource allocation, and social planning.
 - The five countries with the highest average life expectancy are all outside the African continent, with three countries from Europe and two from Asia.
   - They are all developed countries with good education, health and social systems. However, they have the best resources, which means that the distribution of resources and social planning have a significant impact on the expected age.
 
 ### Chart 3: Total Population vs. Urban Population
+```{r}
+library(ggplot2)
 
-``````{r chart3, echo = FALSE, warning = FALSE, code = readLines("TotalPopulationVSUrbanPopulation.R")}
+data <- read.csv("~/Desktop/info/Global Population Trends(2016-2022) 2.csv", stringsAsFactors = FALSE)
+
+data$Total.Population <- as.numeric(gsub(",", "", gsub("-", NA, data$Total.Population)))
+data$Urban.Population <- as.numeric(gsub(",", "", gsub("-", NA, data$Urban.Population)))
+
+print(paste("Missing Total Population:", sum(is.na(data$Total.Population))))
+print(paste("Missing Urban Population:", sum(is.na(data$Urban.Population))))
+
+ggplot(data, aes(x = Total.Population, y = Urban.Population)) +
+  geom_point() +
+  scale_x_log10() +  
+  scale_y_log10() +  
+  labs(title = "Scatter Plot of Total Population vs. Urban Population",
+       x = "Total Population (log scale)",
+       y = "Urban Population (log scale)") +
+  theme_minimal()
 ```
+
+#### Purpose
+I created a scatterplot of total population versus urban population to visually analyze the relationship between a country's total population and its urban population. My main goal is to understand how the city's population compares to the total population. This understanding is critical for policymakers, urban planners, and researchers like me who need to assess the relationship between urbanization and overall population growth.
+
+#### Insights
+The scatterplot shows a strong positive correlation between total population and urban population, indicating that as a country's total population increases, its urban population also increases. More populous countries may have larger urban populations, perhaps due to better economic opportunities, more developed infrastructure, or active urban growth policies. However, I noticed some outliers or deviations from this trend, with some countries not having as large urban populations as expected for the overall population. These biases may stem from a variety of factors, such as geographical constraints, different stages of economic development, or specific national policies affecting urban development.

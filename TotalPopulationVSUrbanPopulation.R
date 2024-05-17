@@ -1,9 +1,12 @@
 library(ggplot2)
 
-data <- read.csv("DATA/Global Population Trends(2016-2022).csv", stringsAsFactors = FALSE)
+data <- read.csv("~/Desktop/info/Global Population Trends(2016-2022) 2.csv", stringsAsFactors = FALSE)
 
 data$Total.Population <- as.numeric(gsub(",", "", gsub("-", NA, data$Total.Population)))
 data$Urban.Population <- as.numeric(gsub(",", "", gsub("-", NA, data$Urban.Population)))
+
+print(paste("Missing Total Population:", sum(is.na(data$Total.Population))))
+print(paste("Missing Urban Population:", sum(is.na(data$Urban.Population))))
 
 ggplot(data, aes(x = Total.Population, y = Urban.Population)) +
   geom_point() +
