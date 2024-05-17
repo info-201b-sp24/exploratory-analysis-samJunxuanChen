@@ -1,7 +1,6 @@
 library(knitr)
 library(dplyr)
 
-# Data
 data <- read.csv("DATA/Global Population Trends(2016-2022).csv")
 
 # Convert character columns to numeric
@@ -12,7 +11,6 @@ data$Life.Expectancy <- as.numeric(gsub(",", "", data$Life.Expectancy))
 
 filtered_data <- data[data$Year %in% c(2018, 2019, 2020, 2021), ]
 
-# Group the data by Country and Year and include the variables
 grouped_data <- filtered_data %>%
   group_by(Country, Year) %>%
   summarise(Total.Population = sum(Total.Population, na.rm = TRUE),
@@ -20,4 +18,3 @@ grouped_data <- filtered_data %>%
             Birth.Rate = mean(Birth.Rate, na.rm = TRUE),
             Life.Expectancy = mean(Life.Expectancy, na.rm = TRUE))
 
-head(grouped_data)

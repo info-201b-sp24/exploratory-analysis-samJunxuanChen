@@ -73,16 +73,21 @@ In our opinion, a significant limitation of our project is the challenge of data
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+``````{r , echo = FALSE, warning = FALSE, code = readLines("Summary.R")}
+```
+
+The data analysis reveals important trends across 216 countries. The highest life expectancy observed is 85 years, suggesting excellent health standards in certain areas. Niger, with the highest birth rate, highlights regions with significant population growth challenges. An average population density of 421 people per square kilometer indicates how closely people live together in various parts of the world, affecting everything from resource distribution to urban planning. The total urban population, nearing 4.42 billion, points to a major shift towards city living, with significant implications for urban infrastructure and services. This urbanization trend is critical as it shapes future planning and development strategies globally.
 
 ### Table: Global Demographic Factors (2018-2021)
 
 ```{r aggregated table, warning=FALSE, echo=FALSE, message=FALSE}
 source("scripts/Table-Global Gemographic Factors.R")
-kable(grouped_data)
+kable(head(grouped_data, 50))
 ```
 
 Due to the large amount of incomplete data from the original data in 2017, this table will round up the 2017 data and start with 2018. This table includes life expectancy along with broader population dynamics, including birth rates, urban population, and overall population size in preparation for a deeper understanding of how demographic factors affect social outcomes.
+
+Note that the total data includes information from 216 different countries, but here we are only displaying the top 50 rows of the table only.
 
 ### Chart 1: Population Density vs Birth Rate
 
